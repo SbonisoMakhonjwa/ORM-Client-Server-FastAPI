@@ -1,0 +1,27 @@
+#Author: Sboniso Makhonjwa
+#Date : 05/08/2024
+
+version: '3.8'
+
+services:
+  osrm-server:
+    build:
+      context: ./osrm-server  # Path to your OSRM server Dockerfile
+    ports:
+      - "5000:5000"
+    networks:
+      - app-network
+
+  fastapi-client:
+    build:
+      context: ./calculation-server  # Path to your FastAPI client Dockerfile
+    ports:
+      - "8000:8000"
+    depends_on:
+      - osrm-server
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
