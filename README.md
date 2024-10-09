@@ -1,5 +1,3 @@
-# Fix the errors
-
 **Pre-requisites**
 1. Python installed
 2. Docker installed
@@ -11,7 +9,7 @@ This project consists of 2 servers:
 
 Both these servers are deployed in docker containers.
 
-**OSRM Server (not broken)**
+**OSRM Server**
 The Open Source Routing Machine is a server which calculates the distance between two points. It takes in a longitude and latitude of two points and calculates the distance between the two.
 
 To run this server, you need to run the following commands from the dockerfile directory:
